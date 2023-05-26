@@ -40,7 +40,7 @@ while p1 > 0 and p2 > 0:
         p2 += bet1
         p1 -= bet1
 
-    print(f"Chef's bet was {bet1} stone(s)")
+    print(f"Chef's bet was {bet1} stone(s)\n")
 
     if p1 > 0 and p2 > 0:
         print(f"You have {p2} stone(s) and Chef has {p1} stone(s)\n")
@@ -57,8 +57,8 @@ while p1 > 0 and p2 > 0:
 
         while True:
             try:
-                turn2_word = int(input("How many stones does Chef have in his hand - 1 or 2?: "))
-                if turn2_word != 1 and turn2_word != 2:
+                turn2_num = int(input("How many stones does Chef have in his hand - 1 or 2?: "))
+                if turn2_num != 1 and turn2_num != 2:
                     raise ValueError
                 break
             except ValueError:
@@ -67,9 +67,9 @@ while p1 > 0 and p2 > 0:
 
         choice1 = random.randint(1, 2)
         turn2 = -1
-        if turn2_word == 1:
+        if turn2_num == 1:
             turn2 = 0
-        elif turn2_word == 2:
+        elif turn2_num == 2:
             turn2 = 1
 
         print(f"Chef has {choice1} stone(s) in his hand")
