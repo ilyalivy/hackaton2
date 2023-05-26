@@ -95,7 +95,7 @@ while p1 > 0 and p2 > 0:
             p1 -= bet2
 
 if p1 <= 0:
-    print('Congratulations! You won the game! Here is your recipe!')
+    print('Congratulations! You won the game! Here is your country list to visit!')
     for i in range(10):
         num = random.randint(0, 100)
         name = data[num].get('name', {}).get('common', 'N/A')
