@@ -22,14 +22,14 @@ p1 = 10
 p2 = 10
 
 while p1 > 0 and p2 > 0:
-    print(f'You have {p2} stone(s).\n')
+    print(f'You have {p2} stone(s) and Computer has {p1} stone(s)\n')
+    print('Computer\'s turn...')
     print('Computer has made a bet.')
-
-    bet1 = random.randint(1, p1)
+    bet1 = random.randint(1, min(p1, p2))
 
     while True:
         try:
-            choice2 = int(input('Now please choose 1 or 2 stone(s): '))
+            choice2 = int(input('How many stone(s) do you put in your hand? 1 or 2: '))
             if choice2 != 1 and choice2 != 2:
                 raise ValueError
             break
@@ -51,33 +51,36 @@ while p1 > 0 and p2 > 0:
         p2 += bet1
         p1 -= bet1
 
-    print(f'Computer bet was {bet1} stone(s)')
+    print(f'Computer\'s bet was {bet1} stone(s)')
 
     if p1 > 0 and p2 > 0:
-        print(f'Now you have {p2} stone(s). And Computer has {p1} stone(s)\n')
+        print(f'You have {p2} stone(s) and Computer has {p1} stone(s)\n')
         print('Your turn...')
 
         while True:
             try:
                 bet2 = int(input('Make your bet: '))
-                if bet2 < 1 or bet2 > p2:
+                if bet2 < 1 or bet2 > p2 or bet2 > p1:
                     raise ValueError
                 break
             except ValueError:
-                print('Invalid input. You can enter number from range of stones you have.')
+                print('Invalid input. You can enter number from range of stones you have and not more than Computer has.')
 
         while True:
-            turn2_word = input('How many stones does Computer have in his hand - 1 or 2?: ')
-            if turn2_word != 'Even!' and turn2_word != 'Odd!':
-                print('Invalid Input.')
-            else:
+            try:
+                turn2_word = int(input('How many stones does Computer have in his hand - 1 or 2?: '))
+                if turn2_word != 1 and turn2_word != 2:
+                    raise ValueError
                 break
+            except ValueError:
+                print('Invalid Input.')
+
 
         choice1 = random.randint(1, 2)
         turn2 = -1
-        if turn2_word == 'Even!':
+        if turn2_word == 1:
             turn2 = 0
-        elif turn2_word == 'Odd!':
+        elif turn2_word == 2:
             turn2 = 1
 
         print(f'Computer has {choice1} stone(s) in his hand')
