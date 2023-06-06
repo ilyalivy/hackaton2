@@ -1,0 +1,9 @@
+Livy Brothers
+This is a delightful game! The incorporation of the recipe API is appreciated. 
+However, I wish you had utilized more Object-Oriented Programming (OOP) principles and made use of a database. 
+It would be interesting if the user was given the option to select a recipe either by its name or ingredients, and to search for their favorite recipes in a database. 
+Please consider adding a README file with instructions on how to run the program, and a requirements.txt that lists all the necessary modules to be installed.
+Python OOP: 5/10
+Databases: 7/10
+API/JSON: 7/10
+General score: 6

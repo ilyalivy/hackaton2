@@ -1,9 +1,9 @@
 import psycopg2
 
 connection = psycopg2.connect(
-    database="Chef",
+    database="Hackathon_1",
     user='postgres',
-    password='root',
+    password='1948',
     host='localhost',
     port='5432'
 )
